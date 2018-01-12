@@ -8,11 +8,11 @@
             <div *ngFor="let member of members" class="panel panel-default">
                 <div class="panel-body text-center">
                     <span *ngIf="member.avatar;else nopicblock"> 
-                    <div class="pv-lg"><img class="center-block img-responsive img-circle img-thumbnail thumb96" src="{{member.avatar}}" alt="profilepic"></div>
+                    <div class="pv-lg"><img class="center-block img-responsive img-circle img-thumbnail thumb96 rounded-circle" src="{{member.avatar}}" alt="profilepic"></div>
                    </span>
                    <ng-template #nopicblock>
                        <div class="pv-lg">
-                           <img class="center-block img-responsive img-circle img-thumbnail thumb96" src="./assets/images/nopic.jpg" alt="profilepic"></div>
+                           <img class="center-block img-responsive img-circle img-thumbnail thumb96 rounded-circle" src="./assets/images/nopic.jpg" alt="profilepic"></div>
                     </ng-template>
                    <h5 class="m0 text-bold">{{member.name}}</h5>
                     <div class="mv-lg">
@@ -68,7 +68,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label" for="inputContact3">mobile</label>
+                                    <label class="control-label" for="inputContact3">Mobile</label>
                                     <div class="">
                                         <input class="form-control" readonly="readonly" id="inputContact3" type="text" value="{{member.mobile1}}">
                                     </div>
