@@ -1,7 +1,3 @@
-<div class="h6 text-center">
-     Member Information
-</div>
-
 <div class="container bootstrap snippet">
     <div  class="row ng-scope">
         <div class="col-md-4">
@@ -14,11 +10,19 @@
                        <div class="pv-lg">
                            <img class="center-block img-responsive img-circle img-thumbnail thumb96 rounded-circle" src="./assets/images/nopic.jpg" alt="profilepic"></div>
                     </ng-template>
-                   <h5 class="m0 text-bold">{{member.name}}</h5>
-                    <div class="mv-lg">
-                        <p>Type : {{member.member_type}} Status : {{member.status}}</p> 
+                   <h5 style="color:#33b5e5" class="m0 text-bold">{{member.name}}</h5>
+                   <div class="mv-lg" *ngIf="member.status=='Active'">
+                        <p style="color:green">Type : {{member.member_type}} Status : {{member.status}}</p> 
                    </div>
-                    <div class="text-center"><a class="btn btn-primary" >Expiry {{member.end_date}}</a></div> 
+                   <div class="mv-lg" *ngIf="member.status=='Inactive'">
+                        <p style="color:red">Type : {{member.member_type}} Status : {{member.status}}</p> 
+                   </div>
+
+                   
+
+                    <div  class="text-center" >
+                            <a class="btn btn-primary">Expiry {{member.end_date}}</a>
+                    </div>
                 </div>
             </div>
              <div class="panel panel-default hidden-xs hidden-sm">
