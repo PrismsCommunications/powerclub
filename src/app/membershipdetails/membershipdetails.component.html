@@ -7,12 +7,17 @@
         <div class="col-md-4">
             <div *ngFor="let member of members" class="panel panel-default">
                 <div class="panel-body text-center">
+                    <span *ngIf="member.avatar;else nopicblock"> 
                     <div class="pv-lg"><img class="center-block img-responsive img-circle img-thumbnail thumb96" src="{{member.avatar}}" alt="profilepic"></div>
-                    <h3 class="m0 text-bold">{{member.name}}</h3>
+                   </span>
+                   <ng-template #nopicblock>
+                       <div class="pv-lg">
+                           <img class="center-block img-responsive img-circle img-thumbnail thumb96" src="./assets/images/nopic.jpg" alt="profilepic"></div>
+                    </ng-template>
+                   <h3 class="m0 text-bold">{{member.name}}</h3>
                     <div class="mv-lg">
                         <p>Type : {{member.member_type}} Status : {{member.status}}</p> 
-                        
-                    </div>
+                   </div>
                     <div class="text-center"><a class="btn btn-primary" >Expiry {{member.end_date}}</a></div> 
                 </div>
             </div>
