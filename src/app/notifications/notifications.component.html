@@ -1,24 +1,12 @@
 <div class="h4 text-center">
   Notifications
 </div>
-<div class="table-responsive" >
-<table class="table table-striped">
-    <thead>
-        <tr class="info">
-            <!-- <th>Sr.No</th> -->
-            <th>Notification</th>
-            <th>Date</th>
-           <!--  <th>Details</th> -->
-        </tr>
-    </thead>
-    <tbody>
-        <tr  *ngFor="let notif of notifications;let i=index;">
-           <!--  <td>{{i+1}}</td> -->
-            <td style="width:90%">{{notif.anntext}}</td>
-            <td style="width:9%">{{notif.created}}</td>
-            <!-- <td>{{h.details}}</td> -->
-        </tr>
-
-    </tbody>
-</table>
+<div class="row container float">
+  <div class="card col-sm-12 col-md-3" *ngFor="let notif of notifications;let i=index;">
+      <div class="card-block">
+        <h4 class="card-title" style="background: #00008b; color: #ffffff;"><b>Annoucement</b></h4>
+        <p class="card-text text-justify">{{notif.anntext}}</p>
+        <p class="small" style="margin-left : 60%; float-left;">{{notif.created}}</p>
+      </div>
+  </div>
 </div>
