@@ -25,18 +25,16 @@ import 'rxjs/add/operator/switchMap';
 export class ApiService
 {
 
-
-  private API_URL = '/rest/index.php/staff_list.json';
+  private API_URL = 'http://topschooldev.prisms.in/rest/index.php/staff_list.json';
   // private API_URL1 = "http://topschooldev.prisms.in/plugins/restapi/staff_list/data.json";
-  headers: Headers;
-  options: RequestOptions;
+//   headers: Headers;
+//   options: RequestOptions;
 
     constructor(public http: Http)
     {
           console.log('Data service connected...');
-          this.headers = new Headers({ 'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': '*'});
-          this.options = new RequestOptions({ headers: this.headers });
+          //this.headers = new Headers({ 'Content-Type': 'application/json'});
+          //this.options = new RequestOptions({ headers: this.headers });
     }
        // private _postsURL = "https://jsonplaceholder.typicode.com/posts";
       getMemberdetails(uid, sid): Observable<any>
@@ -49,7 +47,7 @@ export class ApiService
             sid: sid
           };
           return this.http
-              .post(this.API_URL, body, this.options)
+              .post(this.API_URL, body)
               .map(res => res.json())
               .catch(this.handleError);
      }
@@ -64,7 +62,7 @@ export class ApiService
            sid: sid
          };
          return this.http
-             .post(this.API_URL, body, this.options)
+             .post(this.API_URL, body)
              .map(res => res.json())
              .catch(this.handleError);
     }
@@ -79,7 +77,7 @@ export class ApiService
           sid: sid
         };
         return this.http
-            .post(this.API_URL, body, this.options)
+            .post(this.API_URL, body)
             .map(res=>res.json())
             .catch(this.handleError);
    }
