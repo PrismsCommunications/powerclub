@@ -1,7 +1,12 @@
+
+<div style="padding-top: 10%;">
+
+</div>
+
 <div class="row container float">
   <div class="card col-sm-12 col-md-3" *ngFor="let notif of notifications;let i=index;">
       <div class="card-block">
-        <h4 class="card-title text-center"><b>Annoucement</b></h4>
+        <!-- <h4 class="card-title text-center"><b>Annoucement</b></h4> -->
         <p class="card-text text-justify alert alert-success">{{notif.anntext}}</p>
         <p class="small" style="margin-left : 60%; float-left;">{{notif.created}}</p>
       </div>

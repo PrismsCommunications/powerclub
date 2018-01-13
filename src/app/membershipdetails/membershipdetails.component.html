@@ -1,8 +1,20 @@
+<div style="padding-top: 10%;">
+
+</div>
+
 <div class="container bootstrap snippet">
     <div  class="row ng-scope">
         <div class="col-md-4">
             <div *ngFor="let member of members" class="panel panel-default">
                 <div class="panel-body text-center">
+
+                    <div class="pv-lg"><img class="center-block img-responsive img-circle img-thumbnail thumb96" src="{{member.avatar}}" alt="profilepic"></div>
+                    <h3 class="m0 text-bold">{{member.name}}</h3>
+                    <div class="mv-lg">
+                        <p>Type : {{member.member_type}} Status : {{member.status}}</p>
+
+                    </div>
+                    <div class="text-center"><a class="btn btn-primary" >Expiry {{member.end_date}}</a></div>
                     <span *ngIf="member.avatar;else nopicblock"> 
                     <div class="pv-lg"><img class="center-block img-responsive img-circle img-thumbnail thumb96 rounded-circle" src="{{member.avatar}}" alt="profilepic"></div>
                    </span>
@@ -36,10 +48,10 @@
                                 <div class="text-sm text-muted"><h6>{{plan.pkg_name}}:</h6>  {{plan.startdate}} To {{plan.enddate}}</div>
                             </div>
                         </div>
-                    </div> 
+                    </div>
                 </div>
             </div>
-        </div> 
+        </div>
         <div class="col-md-8">
             <div class="panel panel-default">
                 <div class="panel-body">
@@ -54,7 +66,7 @@
                             </ul>
                         </div>
                     </div> -->
-                    
+
                     <div *ngFor="let member of members" class="row pv-lg">
                         <div class="col-lg-2"></div>
                         <div class="col-lg-8">
@@ -95,9 +107,9 @@
                                         <textarea class="form-control" readonly="readonly" id="inputContact6" row="4">{{member.caddressl1}}</textarea>
                                     </div>
                                 </div>
-                       
+
                         </form>
-                            
+
                         </div>
                     </div>
                 </div>
