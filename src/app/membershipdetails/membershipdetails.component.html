@@ -1,19 +1,28 @@
-<div class="h4 text-center">
-     Member Information
-</div>
-
 <div class="container bootstrap snippet">
     <div  class="row ng-scope">
         <div class="col-md-4">
             <div *ngFor="let member of members" class="panel panel-default">
                 <div class="panel-body text-center">
-                    <div class="pv-lg"><img class="center-block img-responsive img-circle img-thumbnail thumb96" src="{{member.avatar}}" alt="profilepic"></div>
-                    <h3 class="m0 text-bold">{{member.name}}</h3>
-                    <div class="mv-lg">
-                        <p>Type : {{member.member_type}} Status : {{member.status}}</p> 
-                        
+                    <span *ngIf="member.avatar;else nopicblock"> 
+                    <div class="pv-lg"><img class="center-block img-responsive img-circle img-thumbnail thumb96 rounded-circle" src="{{member.avatar}}" alt="profilepic"></div>
+                   </span>
+                   <ng-template #nopicblock>
+                       <div class="pv-lg">
+                           <img class="center-block img-responsive img-circle img-thumbnail thumb96 rounded-circle" src="./assets/images/nopic.jpg" alt="profilepic"></div>
+                    </ng-template>
+                   <h5 style="color:#33b5e5" class="m0 text-bold">{{member.name}}</h5>
+                   <div class="mv-lg" *ngIf="member.status=='Active'">
+                        <p style="color:green">Type : {{member.member_type}} Status : {{member.status}}</p> 
+                   </div>
+                   <div class="mv-lg" *ngIf="member.status=='Inactive'">
+                        <p style="color:red">Type : {{member.member_type}} Status : {{member.status}}</p> 
+                   </div>
+
+                   
+
+                    <div  class="text-center" >
+                            <a class="btn btn-primary">Expiry {{member.end_date}}</a>
                     </div>
-                    <div class="text-center"><a class="btn btn-primary" >Expiry {{member.end_date}}</a></div> 
                 </div>
             </div>
              <div class="panel panel-default hidden-xs hidden-sm">
@@ -63,7 +72,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label" for="inputContact3">mobile</label>
+                                    <label class="control-label" for="inputContact3">Mobile</label>
                                     <div class="">
                                         <input class="form-control" readonly="readonly" id="inputContact3" type="text" value="{{member.mobile1}}">
                                     </div>
