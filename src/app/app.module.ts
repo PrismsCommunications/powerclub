@@ -10,7 +10,7 @@ import { ApiService } from './api.service';
 import { HolidaysComponent } from './holidays/holidays.component';
 import { NotificationsComponent } from './notifications/notifications.component';
 import { NotFoundComponentComponent } from './not-found-component/not-found-component.component';
-
+import { TopnotificComponent } from './topschool/topnotific/topnotific.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +18,8 @@ import { NotFoundComponentComponent } from './not-found-component/not-found-comp
     MembershipdetailsComponent,
     HolidaysComponent,
     NotificationsComponent,
-    NotFoundComponentComponent
+    NotFoundComponentComponent,
+    TopnotificComponent
   ],
   imports: [
     BrowserModule,
@@ -28,6 +29,7 @@ import { NotFoundComponentComponent } from './not-found-component/not-found-comp
             { path : 'memberdetails/:uid/:sid', component : MembershipdetailsComponent },
             { path : 'holidays/:uid/:sid', component : HolidaysComponent },
             { path : 'notifications/:uid/:sid', component : NotificationsComponent },
+            { path : 'topnotific/:uid/:sid', component : TopnotificComponent },
             { path : '**', component: NotFoundComponentComponent}
 
           ])

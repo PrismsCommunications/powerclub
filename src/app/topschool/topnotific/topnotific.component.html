@@ -1,0 +1,68 @@
+<div style="padding-top: 10px;">
+
+</div>
+
+<div class="row container float">
+  <div class="card col-sm-12 col-md-3 .bg-danger" *ngFor="let notif of notifications;let i=index;">
+
+      <!-- Annoucement Type 1 Activity Home Work-->
+      <div class="card-block" *ngIf="notif.an_type == 1">
+        <!-- <h4 class="card-title text-center"><b>Annoucement</b></h4> -->
+        <p class="card-text text-justify alert alert-primary">{{notif.anntext}}</p>
+
+        <a  *ngIf="notif.file_attach" href="{{notif.file_attach}}">
+           <img src="./assets/images/attach.png" style="float : left;" alt="Attachments">
+        </a>
+
+        <p class="small" style="margin-left : 60%; float : left; ">{{notif.created}}</p>
+      </div>
+
+      <!-- Annoucement Type 2 Annoucement-->
+      <div class="card-block" *ngIf="notif.an_type == 2">
+        <!-- <h4 class="card-title text-center"><b>Annoucement</b></h4> -->
+        <p class="card-text text-justify alert alert-success">{{notif.anntext}}</p>
+
+        <a  *ngIf="notif.file_attach" href="{{notif.file_attach}}">
+           <img src="./assets/images/attach.png" style="float : left;" alt="Attachments">
+        </a>
+
+        <p class="small" style="margin-left : 60%; float : left; ">{{notif.created}}</p>
+      </div>
+
+      <!-- Annoucement Type 3 Student Specific-->
+      <div class="card-block" *ngIf="notif.an_type == 3">
+        <!-- <h4 class="card-title text-center"><b>Annoucement</b></h4> -->
+        <p class="card-text text-justify alert alert-warning">{{notif.anntext}}</p>
+
+        <a  *ngIf="notif.file_attach" href="{{notif.file_attach}}">
+           <img src="./assets/images/attach.png" style="float : left;" alt="Attachments">
+        </a>
+
+        <p class="small" style="margin-left : 60%; float : left; ">{{notif.created}}</p>
+      </div>
+
+      <!-- Annoucement Type 6 Activity Home Work-->
+      <div class="card-block" *ngIf="notif.an_type == 6">
+        <!-- <h4 class="card-title text-center"><b>Annoucement</b></h4> -->
+        <p class="card-text text-justify alert alert-primary">{{notif.anntext}}</p>
+
+        <a  *ngIf="notif.file_attach" href="{{notif.file_attach}}">
+           <img src="./assets/images/attach.png" style="float : left;" alt="Attachments">
+        </a>
+
+        <p class="small" style="margin-left : 60%; float : left; ">{{notif.created}}</p>
+      </div>
+
+      <!-- Annoucement Type 11 Student Specific-->
+      <div class="card-block" *ngIf="notif.an_type == 11">
+          <!-- <h4 class="card-title text-center"><b>Annoucement</b></h4> -->
+          <p class="card-text text-justify alert alert-warning">{{notif.anntext}}</p>
+
+          <a  *ngIf="notif.file_attach" href="{{notif.file_attach}}">
+              <img src="./assets/images/attach.png" style="float : left;" alt="Attachments">
+          </a>
+
+          <p class="small" style="margin-left : 60%; float : left; ">{{notif.created}}</p>
+      </div>
+  </div>
+</div>

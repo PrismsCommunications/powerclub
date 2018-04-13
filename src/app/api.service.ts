@@ -1,6 +1,6 @@
+import { Observable } from 'rxjs/Observable';
 import { Injectable } from '@angular/core';
 
-import {Observable} from 'rxjs/Observable';
 // tslint:disable-next-line:import-blacklist
 import 'rxjs/Rx';
 
@@ -20,7 +20,6 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/switchMap';
 
 
-
 @Injectable()
 export class ApiService
 {
@@ -30,16 +29,15 @@ export class ApiService
 //   headers: Headers;
 //   options: RequestOptions;
 
-    constructor(public http: Http)
-    {
-          console.log('Data service connected...');
-          //this.headers = new Headers({ 'Content-Type': 'application/json'});
-          //this.options = new RequestOptions({ headers: this.headers });
-    }
+      constructor(public http: Http)
+      {
+            console.log('Data service connected...');
+            //this.headers = new Headers({ 'Content-Type': 'application/json'});
+            //this.options = new RequestOptions({ headers: this.headers });
+      }
        // private _postsURL = "https://jsonplaceholder.typicode.com/posts";
       getMemberdetails(uid, sid): Observable<any>
       {
-
           const body =
           {
             uid: uid,
@@ -54,7 +52,6 @@ export class ApiService
 
      getHolidaysdetails(uid, sid): Observable<any>
      {
-
          const body =
          {
            uid: uid,
@@ -69,7 +66,6 @@ export class ApiService
 
     getNotificationsdetails(uid, sid): Observable<any>
     {
-
         const body =
         {
           uid: uid,
@@ -78,12 +74,28 @@ export class ApiService
         };
         return this.http
             .post(this.API_URL, body)
-            .map(res=>res.json())
+            .map(res => res.json())
             .catch(this.handleError);
+    }
+
+
+   getTopSchoolNotifications(uid, sid): Observable<any>
+   {
+       const body =
+       {
+          uid: uid,
+          fun_name: 'getTopSchoolNotifications',
+          sid: sid
+       };
+       return this.http
+           .post(this.API_URL, body)
+           .map(res => res.json())
+           .catch(this.handleError);
    }
 
-     private handleError(error: Response)
-     {
-       return Observable.throw(error.statusText);
-     }
+   private handleError(error: Response)
+  {
+     return Observable.throw(error.statusText);
+  }
+
 }
